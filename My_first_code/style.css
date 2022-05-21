@@ -1,0 +1,351 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
+
+@font-face {
+    src: url(fontes/stoked.ttf);
+    font-family: 'Stoked';    
+    font-weight: normal;
+} 
+
+*,
+*:before,
+*:after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Stoked', sans-serif;
+    color:black;
+    background-image: linear-gradient(to top,purple, #a094ee,paleturquoise );
+          
+}
+
+/* Header */
+
+.header{
+    height:100vh;
+    width: 100vw;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    box-sizing: border-box;
+    padding:0 112px;
+    position: relative;
+}
+
+h1{
+    font-size: 70px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+
+h2{
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+
+.social-media{
+    margin-top: 1rem;
+    display: flex;
+}
+
+.social-media a{
+    text-decoration:none;
+    color: black;
+    padding: 1rem 4rem;
+    border: 1px solid black;
+    min-width: 4rem;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    transition: .5s ease-in-out;
+    font-family: Anton, sans-serif;
+}
+
+/*quando passao mouse em cima das redes sociais mude a cor*/
+a:hover{
+    color: paleturquoise;
+    box-shadow:
+        inset 0 0 1em purple
+}
+
+.checkbox .hamburger{
+    width: 50px;
+    height: 2px;
+    background-color: black;
+    position:absolute;
+    border-radius: 4px;
+    transition: 0.5s ease-in-out;
+}
+
+.menu{
+    background: #A85CF9;
+    border-radius: 50%;
+    width: 58px;
+    height: 58px;
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    cursor: pointer;
+    right: 25px;
+    transition: box-shadow 0.5s ease-in-out;
+}
+
+.menu:hover{
+    box-shadow: 3px 3px paleturquoise;
+}
+
+.menu-itens{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: 100ms ease-in-out 0.2s;
+    font-family: Anton;
+    text-decoration: overline;
+    text-align: center;
+}
+
+.header .menu-itens ul{
+    list-style-type:none;
+    position:fixed;
+    margin-top: 13%;
+}
+
+.menu-itens ul li a{
+    margin: 10px 0;
+    color: white;
+    text-decoration: overline;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 48px;
+    justify-content: center;
+    
+}
+
+input:checked ~ label .menu-itens{
+    opacity: 1;
+    visibility: visible;
+}
+
+input:checked ~ label .menu {
+    box-shadow: 0 0 0 100vmax purple;
+    z-index: 1;
+}
+
+input{
+    display: none;
+}
+
+/*menu hamburger*/
+.hamburger {
+    position: relative;
+    display: block;
+    background: black;
+    width: 30px;
+    height: 2px;
+    top: 29px;
+    left: 15px;
+    justify-content: center;
+    transition: .5s ease-in-out;
+}
+
+.hamburger:before,
+.hamburger:after{
+    background: black;
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transition: .5s ease-in-out;
+}
+
+.hamburger:before{
+    top: -10px;
+}
+
+.hamburger:after{
+    bottom: -10px;
+}
+
+
+input:checked ~ label .hamburger{
+    transform: rotate(45deg);
+}
+
+input:checked ~ label .hamburger:before{
+    
+    transform: rotate(90deg);
+    top: 0;
+}
+
+input:checked ~ label .hamburger:after{
+    transform: rotate(90deg);
+    bottom: 0;
+}
+
+
+/* Main */
+
+.container{
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction:column;
+    justify-content:space-evenly;
+    margin: 3rem 0;
+}
+
+.card-container{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 90%;
+}
+
+.card{
+    width: 300px;
+    height: 300px;
+    border-radius: 100%;
+    margin: 3rem 0 0 0 ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(to top,purple, #a094ee,paleturquoise );
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter:grayscale(0.5);
+    color: black;
+    cursor: pointer;
+    transition: 0.5s ease-in-out;
+    text-align: center;
+}
+
+.card-text{
+    width: 50%;
+    letter-spacing: 1px;
+    color: gainsboro;
+    font-family: Anton, sans-serif;
+    text-align: justify;
+}
+
+.card-wrapper{
+    text-align:center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+    position: relative;
+}
+
+.card-wrapper::before{
+    content:'';
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    display: block;
+    border: 2px solid paleturquoise;
+    opacity: 0;
+    transition: 0.5s ease-in-out;
+}
+
+.card-wrapper h2{
+    font-size:  24px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin: 0;
+    transition: 0.5s ease-in-out;
+}
+
+.card-wrapper p{
+    font-size: 0;
+    visibility: hidden;
+    opacity: 0;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: 0.5s ease-in-out;
+    font-family: Arial, sans-serif;
+}
+
+.card:hover{
+    filter: unset;
+}
+
+.card:hover > .card-wrapper::before{
+    height: 250px;
+    width: 250px;
+    opacity: 1;
+}
+
+.card:hover >.card-wrapper p{
+    opacity: 1;
+    visibility: visible;
+    font-size: 15px;
+    text-align: center;
+}
+
+.footer{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    background-color:transparent;
+    font-family: Arial, sans-serif;
+    align-items: center;
+    justify-content: center;
+    color: paleturquoise;
+}
+
+.card-footer-text{
+    width: 50%;
+    letter-spacing: 2px;
+    text-align: center;
+    font-size: 13px;
+}
+
+.footer h2{
+    width: 50%;
+    letter-spacing: 1px;
+    text-align: center;
+    font-size: 13px;
+}
+
+.footer p{
+    width: 50%;
+    letter-spacing: 3px;
+    text-align: center;
+    font-size: 13px;
+    color: paleturquoise;
+}
+
+
+.footer .contacts ul {
+    list-style-type:none;
+    position:fixed;
+    margin-top: 13%;
+}
+
+
+.contacts ul li a{
+    margin: 10px 0;
+    color: paleturquoise;
+    text-decoration: none;
+    text-transform: none;
+    letter-spacing:3px;
+    font-size: 13px;
+    justify-content: center;
+}
