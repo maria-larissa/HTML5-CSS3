@@ -1,2 +1,3 @@
 # HTML5-CSS3
-This repository is for my code make for web.
+
+My first code is an prototip of a portifolio. I used same videos on youtube for help a desing.
